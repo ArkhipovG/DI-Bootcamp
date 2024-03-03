@@ -23,5 +23,32 @@ shoe_size = 42
 info  = f"My name is {name} and I am {age} years old. My shoe size is {shoe_size}"
 print(info)
 
+#Exercise6
+a = 12
+b = 2
+if a > b:
+    print("Hello world!")
 
+#Exercise7
+selected_number = int(input("Enter a number: "))
+if selected_number % 2 == 0:
+    print("Even")
+else:
+    print("Odd")
+
+#Exercise8
+my_name = "Gregory"
+your_name = str(input("Enter your name: "))
+if your_name == my_name:
+    print("We are namesakes!")
+else:
+    print("We are not namesakes!")
+
+#Exercise9
+min_hight = 145
+your_hight = int(input("Enter your hight in cm: "))
+if your_hight >= min_hight:
+    print("You are tall enough to ride")
+else:
+    print("You need to grow some more to ride")
 
