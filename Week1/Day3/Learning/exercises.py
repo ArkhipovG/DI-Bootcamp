@@ -26,3 +26,8 @@ for key in keys_to_remove:
 
 
 print(sample_dict)
+
+my_set = {1,2,3,4}
+your_set = {1,2,3,}
+
+print(my_set.issuperset(your_set))
