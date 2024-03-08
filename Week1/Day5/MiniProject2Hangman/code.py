@@ -119,7 +119,6 @@ def play():
     incorrect_guesses = len(incorrect_guesses_list)
 
     print(hidden_word)
-    print(word_list)
     print(draw_hangman(incorrect_guesses))
 
     while not is_finished:
