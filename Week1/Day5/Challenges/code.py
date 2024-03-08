@@ -186,3 +186,103 @@ print(sum_over_k('Do or do not there is no try', 3))
 print("-----")
 
 
+# Exercise 14
+def dict_avg(dict):
+    dict_sum = 0
+    for key, value in dict.items():
+        dict_sum += value
+
+    dict_average = dict_sum / len(dict)
+
+    return dict_average
+
+
+print(dict_avg({'a': 1, 'b': 2, 'c': 8, 'd': 1}))
+print("-----")
+
+
+# Exercise 15
+def common_div(a, b):
+    a_divisors = [num for num in range(2, a + 1) if a % num == 0]
+    print(a_divisors)
+    b_divisors = [num for num in range(2, b + 1) if b % num == 0]
+    print(b_divisors)
+    common_divisors = [num for num in a_divisors if num in b_divisors]
+    return common_divisors
+
+
+print(common_div(10, 20))
+print("-----")
+
+
+# Exercise 16
+def is_prime(number):
+    number_divisors = [num for num in range(2, number + 1) if number % num == 0]
+    if len(number_divisors) == 1:
+        return True
+
+
+print(is_prime(10))
+print("-----")
+
+
+# Exercise 17
+def weird_print(lst):
+    weird_list = []
+    for i, num in enumerate(lst):
+        if i % 2 == 0 and num % 2 == 0:
+            weird_list.append(num)
+
+    return weird_list
+
+
+print(weird_print([1, 2, 2, 3, 4, 5]))
+print("-----")
+
+
+# Exercise 18
+def type_count(**kwargs):
+    count_dict = {}
+
+    for arg_name, arg_value in kwargs.items():
+        arg_type = type(arg_value).__name__
+        count_dict[arg_type] = count_dict.get(arg_type, 0) + 1
+
+    for type_name, count in count_dict.items():
+        print(f"{type_name}: {count}", end=", ")
+
+
+type_count(a=1, b='string', c=1.0, d=True, e=False)
+print("-----")
+
+
+# Exercise 19
+def my_split(input_string, separator=" "):
+    result = []
+    word = ""
+
+    for char in input_string:
+        if char == separator:
+            if word:
+                result.append(word)
+                word = ""
+        else:
+            word += char
+
+    if word:
+        result.append(word)
+
+    return result
+
+
+print(my_split("Hello world! How are you?"))
+print(my_split("Hello world! How are you?", 'o'))
+print("-----")
+
+
+# Exercise 20
+def convert_pass(word):
+    password = '*' * len(word)
+    return password
+
+print(convert_pass("mypassword"))
