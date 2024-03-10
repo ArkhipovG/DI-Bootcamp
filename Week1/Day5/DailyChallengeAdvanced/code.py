@@ -1,13 +1,18 @@
 import random
 
 list_of_numbers = [random.randint(0, 10000) for _ in range(20000)]
+
 target_number = 3728
-set_of_couples = set()
-for number in list_of_numbers:
-    for i in list_of_numbers:
-       if number + list_of_numbers[i] == target_number:
-           set_of_couples.add((number, list_of_numbers[i]))
+
+compliment_list = []
+pair_count = 0
+
+for num in list_of_numbers:
+    compliment_list.append(target_number - num)
 
 
-print(len(set_of_couples))
+for num in compliment_list:
+    if num in list_of_numbers:
+        pair_count += 1
 
+print("Number of pairs summing to target_number:", pair_count)
