@@ -102,25 +102,27 @@ class Zoo:
         for animal in self.zoo_animals:
             first_letter = animal[0].lower()
 
-            if first_letter in grouped_animals:
+            if first_letter not in grouped_animals:
+                grouped_animals[first_letter] = animal
+            elif first_letter in grouped_animals and type(grouped_animals[first_letter]) == str:
+                grouped_animals[first_letter] = [grouped_animals[first_letter]]
                 grouped_animals[first_letter].append(animal)
-            else:
-                grouped_animals[first_letter] = [animal]
+            elif first_letter in grouped_animals and type(grouped_animals[first_letter]) == list:
+                grouped_animals[first_letter].append(animal)
 
-        return grouped_animals
+        new_dict = {index + 1: value for index, (key, value) in enumerate(grouped_animals.items())}
+        print(new_dict)
+
+        return new_dict
 
     def get_groups(self):
         sorted_groups = self.sort_animals()
-        new_dict = {index + 1: value for index, (key, value) in enumerate(sorted_groups.items())}
-        for key, value in new_dict.items():
-            if len(value) <= 1:
-                print(f'{key} : "{value[0]}"')
-            else:
-                print(f"{key} : {value}")
+        for key, value in sorted_groups.items():
+            print(key, ":", value)
 
 
 ramat_gan_safari = Zoo("Ramat Gan Safari")
-ramat_gan_safari.add_animal("Tiger", "Lion", "Baboon", "Ape", "Cougar", "Cat", "Bear")
+ramat_gan_safari.add_animal("Tiger", "Lion", "Baboon", "Ape", "Cougar", "Cat", "Bear", "Crocodile")
 ramat_gan_safari.get_animals()
 ramat_gan_safari.sell_animal("Lion")
 ramat_gan_safari.get_groups()
