@@ -132,10 +132,9 @@ class Family:
 
     def is_18(self, name):
         for member in self.members:
-            if member['name'] == name and member['age'] > 18:
-                return True
-            elif member['name'] == name and member['age'] < 18:
-                return False
+            if member['name'] == name:
+                return member['age'] >= 18
+
 
     def family_presentation(self):
         print(f"The family's last name is {self.last_name}")
