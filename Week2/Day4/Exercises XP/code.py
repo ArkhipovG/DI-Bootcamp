@@ -13,8 +13,7 @@ def get_words_from_file():
 
 
 def get_random_sentence(length):
-    list_of_words = get_words_from_file()
-    return ' '.join(random.choice(list_of_words) for i in range(length)).lower()
+    return ' '.join(random.choice(get_words_from_file()) for i in range(length)).lower()
 
 
 def main():
