@@ -1,5 +1,7 @@
 import os
 import random
+
+#Exercise 1
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
 
@@ -17,15 +19,21 @@ def get_random_sentence(length):
 
 def main():
     print("This program asks the user for sentence length an then printing the generated sentence.")
-    length = int(input('How long the sentence should be? (Acceptable values are between 2 and 20)\n'))
-    if 2 <= length <= 20:
-        sentence = get_random_sentence(length)
+    input_str = input('How long the sentence should be? (Acceptable values are between 2 and 20)\n')
+    if input_str.isdigit():
+        length = int(input_str)
+        if 2 <= length <= 20:
+            sentence = get_random_sentence(length)
+            print(sentence)
+        else:
+            print(ValueError("It's not valid"))
+
+
     else:
-        raise ValueError("It's not valid")
-    print(sentence)
+        print(ValueError("It's not valid"))
+
 
 main()
 
-# Exercise 2
 
 
