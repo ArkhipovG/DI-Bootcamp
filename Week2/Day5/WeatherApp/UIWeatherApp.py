@@ -5,7 +5,6 @@ from timezonefinder import TimezoneFinder
 import matplotlib.pyplot as plt
 
 owm = OWM('f90f9bec6513fedbcf4e335f4f5c8c5e')
-weather_mgr = owm.weather_manager()
 mgr = owm.weather_manager()
 reg = owm.city_id_registry()
 tf = TimezoneFinder()
