@@ -2,7 +2,6 @@ from pyowm.owm import OWM
 import pytz
 
 owm = OWM('f90f9bec6513fedbcf4e335f4f5c8c5e')
-weather_mgr = owm.weather_manager()
 mgr = owm.weather_manager()
 reg = owm.city_id_registry()
 
