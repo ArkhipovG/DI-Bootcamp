@@ -4,7 +4,7 @@ from game import Game
 def get_user_menu_choice():
     user_choices = ['g', 'q']
     print("(g)Play a new game")
-    print("(q)Quit")
+    print("(q)Show score and quit")
 
     get_user_choice = input(": ")
     if get_user_choice in user_choices:

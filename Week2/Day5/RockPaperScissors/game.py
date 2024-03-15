@@ -2,17 +2,13 @@ import random
 
 
 class Game:
-    def __init__(self):
-        self.game_mode = "vs computer"
 
     @staticmethod
     def get_user_item():
         items = ['r', 'p', 's']
-        is_valid = False
-        while not is_valid:
+        while True:
             user_item = input('Select (r)rock, (p)paper, (s)scissors): ')
             if user_item in items:
-                is_valid = True
                 return user_item
             else:
                 print('Invalid select')
