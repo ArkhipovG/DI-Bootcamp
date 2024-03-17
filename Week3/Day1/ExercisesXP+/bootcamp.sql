@@ -34,7 +34,11 @@
 
 -- SELECT first_name, last_name from students WHERE id = 1 or id = 3;
 
--- SELECT id, first_name, last_name from students WHERE birth_date >= '01/01/2000';
+-- SELECT id, first_name, last_name, birth_date from students WHERE birth_date >= '01/01/2000';
 
+-- SELECT first_name, last_name, birth_date from students ORDER BY last_name ASC LIMIT 4;
 
+-- SELECT first_name, last_name, birth_date from students ORDER BY birth_date DESC LIMIT 1;
+
+-- SELECT first_name, last_name, birth_date from students OFFSET 2  LIMIT 3;
 
