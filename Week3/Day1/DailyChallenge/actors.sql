@@ -1,0 +1,2 @@
+-- select count(*) as actors_number from actors
+-- Error will be raised because we have the option (not null) in the table
