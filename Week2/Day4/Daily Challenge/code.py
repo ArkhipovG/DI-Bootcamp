@@ -3,6 +3,10 @@ import os
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
 
+with open(os.path.join(dir_path + '/sowpods.txt')) as sowpods:
+    lists_of_words = sowpods.read().lower().splitlines()
+
+
 class Text:
     def __init__(self, string):
         self.string = string
@@ -22,13 +26,13 @@ class Text:
     def most_common_word(self):
         word_dict = {}
         for word in self.list_of_words:
-            if word not in word_dict:
+            if word not in word_dict and word in lists_of_words:
                 word_dict[word] = 1
-            else:
+            elif word in lists_of_words:
                 word_dict[word] += 1
 
         most_common_word = max(word_dict, key=word_dict.get)
-        return most_common_word
+        return f"Most common word is: {most_common_word}"
 
     def unique_words(self):
         unique_words = []
