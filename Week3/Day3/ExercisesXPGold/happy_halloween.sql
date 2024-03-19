@@ -1,0 +1,77 @@
+-- SELECT store.store_id, c.city, c2.country
+-- FROM store
+-- join address a on a.address_id = store.address_id
+-- join city c on c.city_id = a.city_id
+-- join country c2 on c2.country_id = c.country_id;
+
+-- SELECT s.store_id,
+--        SUM(f.length) AS total_viewing_time_hours
+-- FROM store s
+-- JOIN inventory i ON s.store_id = i.store_id
+-- JOIN film f ON i.film_id = f.film_id
+-- GROUP BY s.store_id;
+
+-- SELECT s.store_id,
+--        SUM(f.length) AS total_viewing_time_hours
+-- FROM store s
+-- JOIN inventory i ON s.store_id = i.store_id
+-- JOIN film f ON i.film_id = f.film_id
+-- LEFT JOIN rental r ON i.inventory_id = r.inventory_id
+-- WHERE r.return_date IS NOT NULL
+-- GROUP BY s.store_id;
+
+-- SELECT (c.first_name, c.last_name) AS full_name, city, country
+-- FROM customer c
+-- join address a on a.address_id = c.address_id
+-- join city c3 on c3.city_id = a.city_id
+-- join country c2 on c3.country_id = c2.country_id
+-- left join public.store s on a.address_id = s.address_id
+
+-- SELECT f.title, category.name
+-- FROM film f
+-- JOIN film_category on f.film_id = film_category.film_id
+-- JOIN category on film_category.category_id = category.category_id
+-- WHERE category.name != 'Horror'
+-- AND NOT ( f.title ILIKE '%beast%'
+--     OR f.title ILIKE '%monster%'
+--     OR f.title ILIKE '%ghost%'
+--     OR f.title ILIKE '%dead%'
+--     OR f.title ILIKE '%zombie%'
+--     OR f.title ILIKE '%undead%'
+--     OR f.description ILIKE '%beast%'
+--     OR f.description ILIKE '%monster%'
+--     OR f.description ILIKE '%ghost%'
+--     OR f.description ILIKE '%dead%'
+--     OR f.description ILIKE '%zombie%'
+--     OR f.description ILIKE '%undead%'
+--     )
+
+-- SELECT
+--     SUM(f.length) AS total_minutes,
+--     SUM(f.length) / 60 AS total_hours,
+--     SUM(f.length) / (60 * 24) AS total_days
+-- FROM
+--     film f;
+--
+--
+-- SELECT
+--     SUM(f.length) AS total_minutes,
+--     SUM(f.length) / 60 AS total_hours,
+--     SUM(f.length) / (60 * 24) AS total_days
+-- FROM film f
+-- JOIN film_category on f.film_id = film_category.film_id
+-- JOIN category on film_category.category_id = category.category_id
+-- WHERE category.name != 'Horror'
+-- AND NOT ( f.title ILIKE '%beast%'
+--     OR f.title ILIKE '%monster%'
+--     OR f.title ILIKE '%ghost%'
+--     OR f.title ILIKE '%dead%'
+--     OR f.title ILIKE '%zombie%'
+--     OR f.title ILIKE '%undead%'
+--     OR f.description ILIKE '%beast%'
+--     OR f.description ILIKE '%monster%'
+--     OR f.description ILIKE '%ghost%'
+--     OR f.description ILIKE '%dead%'
+--     OR f.description ILIKE '%zombie%'
+--     OR f.description ILIKE '%undead%'
+--     )
