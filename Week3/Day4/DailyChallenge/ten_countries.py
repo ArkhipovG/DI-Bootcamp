@@ -39,7 +39,7 @@ def main():
     if connection is not None:
         random_countries = fetch_random_countries()
         if random_countries:
-            countries_to_insert = [(country['name']['common'], country['capital'][0], country['flags']['png'],
+            countries_to_insert = [(country['name']['common'], country['capital'][0], country['flag'],
                                     country['subregion'], country['population'])
                                    for country in random_countries]
             insert_countries(connection, countries_to_insert)
