@@ -8,19 +8,18 @@
 -- it will drop easily because it's a child table
 
 -- SELECT COUNT(*)
--- FROM (SELECT film.title
---       FROM film
---       LEFT JOIN inventory
---       ON film.film_id = inventory.film_id
---       WHERE inventory.film_id IS NULL);
+-- FROM (SELECT rental_id
+--       FROM rental
+--       WHERE return_date is null);
 
 -- SELECT film.film_id, film.title, film.rental_rate
 -- FROM film
 -- LEFT JOIN inventory
 -- ON film.film_id = inventory.film_id
--- WHERE inventory.film_id IS NULL
+-- JOIN rental r on inventory.inventory_id = r.inventory_id
+-- WHERE return_date IS NULL
 -- ORDER BY rental_rate DESC, title ASC
--- FETCH FIRST 30 ROWS ONLY
+-- FETCH FIRST 30 ROWS ONLY;
 
 -- SELECT film.title
 -- FROM film
